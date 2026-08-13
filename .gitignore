@@ -12,6 +12,10 @@ v0-irl-event-landing-custom-3-d-lanyard.zip
 *.gif
 portfolio-*.png
 v0-*.png
+面试项目复盘/
+网站截图/
+拼多多*.txt
+拼多多*.md
 
 .vercel
 .env*
