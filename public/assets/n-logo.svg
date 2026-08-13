@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="N logo">
+  <rect width="180" height="180" rx="36" fill="#090909"/>
+  <path d="M48 132V48h20l44 52V48h20v84h-18L68 78v54H48z" fill="#f8f8f3"/>
+  <path d="M128 48v84h-8L58 60V48h18l36 42V48h16z" fill="#7ef5b7" opacity=".22"/>
+</svg>

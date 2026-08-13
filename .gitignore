@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.vercel/
+.DS_Store
+.obsidian/
+tmp/
+visual-concepts/
+website-style-demos/
+v0-irl-event-landing-custom-3-d-lanyard/
+v0-irl-event-landing-custom-3-d-lanyard.zip
+*.m4a
+*.gif
+portfolio-*.png
+v0-*.png
+
+.vercel
+.env*
