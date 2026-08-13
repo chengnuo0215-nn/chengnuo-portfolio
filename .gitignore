@@ -19,3 +19,8 @@ v0-*.png
 
 .vercel
 .env*
+
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*
