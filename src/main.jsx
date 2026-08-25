@@ -199,6 +199,16 @@ const projects = [
     href: "/projects/model-label",
   },
   {
+    title: "赢麻了丨麻将智能记账小程序开发",
+    type: "AI 工作流实际运用 / 小程序开发",
+    meta: "个人项目 · 2026",
+    label: "AI Workflow",
+    description: "设计并推进一款面向朋友局麻将的微信小程序，通过手动与智能辅助记分、规则配置及历史战绩管理，提升多人线下对局的计分效率与体验。",
+    accent: "#67fefb",
+    image: "/assets/mahjong/1.png",
+    href: "/projects/mahjong",
+  },
+  {
     title: "Agile AI Platform",
     type: "平台工具 / AI 评测流程",
     meta: "TikTok 平台设计组 · 2025",
@@ -224,6 +234,11 @@ const videoHeatImages = Array.from({ length: 8 }, (_, index) => `/assets/video-h
 const modelLabelImages = Array.from({ length: 5 }, (_, index) => `/assets/model-label/2-${index + 1}.png`);
 const agileImages = Array.from({ length: 9 }, (_, index) => `/assets/agile/3-${index + 1}.png`);
 const semiImages = Array.from({ length: 14 }, (_, index) => `/assets/semi/4-${index + 1}.png`);
+const mahjongImages = [
+  ...Array.from({ length: 3 }, (_, index) => `/assets/mahjong/${index + 1}.png`),
+  ...Array.from({ length: 3 }, (_, index) => `/assets/mahjong/${index + 4}.gif`),
+  ...[7, 8, 9, 10, 11, 13].map((index) => `/assets/mahjong/${index}.png`),
+];
 const modelLabelPlaygroundUrl = "https://image-labeling-platform-20260810004.vercel.app/?embed=1";
 const modelLabelFullExperienceUrl = "https://image-labeling-platform-20260810004.vercel.app";
 
@@ -245,6 +260,21 @@ const detailNavItems = [
 ];
 
 const projectCases = {
+  "/projects/mahjong": {
+    title: "赢麻了丨麻将智能记账小程序开发",
+    topAlt: "赢麻了麻将智能记账小程序项目主图",
+    images: mahjongImages,
+    facts: [
+      [
+        "项目类型",
+        "个人从真实线下麻将场景出发发起的小程序项目，目标是借助 AI 与低代码协作能力，搭建一套可真正上线使用的麻将智能记账工具。项目中我负责产品定位、功能设想、前端设计与开发，另一位同学配合完成后端搭建与 AI 语音输入算分流程。",
+      ],
+      [
+        "AI 工作流运用",
+        "整个项目中尝试让 AI 介入从视觉方向探索、页面生成、图片转代码到前端实现的生产流程，并在实际上线过程中不断校准 AI 输出与真实产品体验之间的差距，沉淀自己对 AI 工作流边界、设计判断和人工修正环节的理解。",
+      ],
+    ],
+  },
   "/projects/video-heat": {
     title: "微信视频号移动端加热工具重构",
     topAlt: "微信视频号移动端加热工具重构项目主图",
@@ -417,7 +447,11 @@ function HomePage({ showNav }) {
 
 function ProjectDetail({ caseData, currentPath }) {
   const relatedProjects = projects.filter((project) => project.href !== currentPath);
-  const currentDetailNavItems = detailNavItems.filter((item) => item.href !== "#detail-playground" || caseData.playground);
+  const currentDetailNavItems = detailNavItems.filter((item) => {
+    if (item.href === "#detail-playground") return caseData.playground;
+    if (item.href === "#detail-overview") return !caseData.hideOverview;
+    return true;
+  });
 
   return (
     <div className="detail-page">
@@ -441,16 +475,18 @@ function ProjectDetail({ caseData, currentPath }) {
           </div>
         </section>
 
-        <section id="detail-overview" className="detail-overview" aria-label="项目概览">
-          <div className="detail-facts">
-            {caseData.facts.map(([label, value]) => (
-              <div key={label}>
-                <span>{label}</span>
-                <p>{value}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        {!caseData.hideOverview ? (
+          <section id="detail-overview" className="detail-overview" aria-label="项目概览">
+            <div className="detail-facts">
+              {caseData.facts.map(([label, value]) => (
+                <div key={label}>
+                  <span>{label}</span>
+                  <p>{value}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {caseData.playground ? (
           <section id="detail-playground" className="detail-playground" aria-label="项目 Playground">
