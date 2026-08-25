@@ -10,6 +10,7 @@ v0-irl-event-landing-custom-3-d-lanyard
 v0-irl-event-landing-custom-3-d-lanyard.zip
 *.m4a
 *.gif
+!public/assets/mahjong/*.gif
 portfolio-*.png
 v0-*.png
 面试项目复盘
@@ -17,4 +18,3 @@ v0-*.png
 拼多多*.md
 拼多多*.m4a
 拼多多面试.md
-
