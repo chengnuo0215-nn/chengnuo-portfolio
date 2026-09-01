@@ -231,7 +231,7 @@ const projects = [
   },
 ];
 
-const videoHeatImages = Array.from({ length: 8 }, (_, index) => `/assets/video-heat/${index + 1}.png`);
+const videoHeatImages = Array.from({ length: 10 }, (_, index) => `/assets/video-heat/${index + 1}.png`);
 const modelLabelImages = Array.from({ length: 5 }, (_, index) => `/assets/model-label/2-${index + 1}.png`);
 const agileImages = Array.from({ length: 9 }, (_, index) => `/assets/agile/3-${index + 1}.png`);
 const semiImages = Array.from({ length: 14 }, (_, index) => `/assets/semi/4-${index + 1}.png`);
