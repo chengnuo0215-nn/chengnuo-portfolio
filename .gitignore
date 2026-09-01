@@ -24,3 +24,6 @@ v0-*.png
 .env
 .edgeone/*
 .tef_dist/*
+output/
+work/
+千问*.txt
